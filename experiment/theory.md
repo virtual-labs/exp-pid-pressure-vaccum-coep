@@ -8,13 +8,13 @@ Pressure and Vacuum Plant design purpose to identify the variation in static and
 
 The Pressure vacuum Pilot Plant hardware contain the combined setup, but it is operated individually. Both plant has same PLC. Pressure setup has 0 to 10 bar three phase compressor and 9 different properties pressure transmitters (PT1 to PT9 and reference slandered is PT3). Vacuum setup has three phase 0 to -1000 mbar vacuum pump. It has 5 different properties vacuum transmitters VT1 to VT5 and reference standard is VT3.
 
-![*Piping_Diagram_of_Vacuum_System* ](Piping_Diagram_of_Vacuum_System.png)
+![*Piping_Diagram_of_Vacuum_System* ](images/Piping_Diagram_of_Vacuum_System.png)
 Piping Diagram of Vacuum System
 
-![*Pressure_Vaccum_Plant_Setup* ](Pressure_Vaccum_Plant_Setup.png)
+![*Pressure_Vaccum_Plant_Setup* ](images/Pressure_Vaccum_Plant_Setup.png)
 Pressure Vaccum Plant Setup
 
-![*Pressure_and_vacuum_plant_control_panel_setup* ](Pressure_and_vacuum_plant_control_panel_setup.png)
+![*Pressure_and_vacuum_plant_control_panel_setup* ](images/Pressure_and_vacuum_plant_control_panel_setup.png)
 Pressure and Vacuum plant control panel setup
 
 #### Pressure plant description
@@ -41,10 +41,10 @@ Pressure setup has different manufacturer and device communication protocols tra
 -	Air vessel drain solenoid valve 10 (AV - DSV10)
 -	Compressor unloading solenoid valve 11 (COMP - USV11)
 
-![*Pressure_plant_communication_and_piping_and_Instrument_Diagram* ](Pressure_plant_communication_and_piping_&_Instrument_Diagram.jpg)
+![*Pressure_plant_communication_and_piping_and_Instrument_Diagram* ](images/Pressure_plant_communication_and_piping_&_Instrument_Diagram.jpg)
 Pressure plant communication and piping & Instrument Diagram
 
-![*Pressure_plant_operator_SCADA* ](Pressure_plant_operator_SCADA.jpg)
+![*Pressure_plant_operator_SCADA* ](images/Pressure_plant_operator_SCADA.jpg)
 Pressure plant operator SCADA
 
 #### Vacuum plant description
@@ -68,33 +68,33 @@ Vacuum setup has different manufacturer and device communication protocols trans
 -	Butterfly valve
 -	Stepper motor
 
-![*Piping_and_Instrument_Diagram_of_Vacuum_System* ](Piping_and_Instrument_Diagram_of_Vacuum_System.png)
+![*Piping_and_Instrument_Diagram_of_Vacuum_System* ](images/Piping_and_Instrument_Diagram_of_Vacuum_System.png)
 Vacuum plant communication and piping & Instrument Diagram
 
-![*Vacuum_Mimic_Diagram* ](Vacuum_Mimic_Diagram.png)
+![*Vacuum_Mimic_Diagram* ](images/Vacuum_Mimic_Diagram.png)
 Vacuum Mimic Diagram
 
 Pressure and Vacuum plant Components
 
-![*Air_Compressor* ](Air_Compressor.png)
+![*Air_Compressor* ](images/Air_Compressor.png)
 Air Compressor
 
-![*Smart_Wireless_Gateway* ](Smart_Wireless_Gateway.jpg)
+![*Smart_Wireless_Gateway* ](images/Smart_Wireless_Gateway.jpg)
 Smart Wireless Gateway
 
-![*Solenoid_Valve_2v2* ](Solenoid_Valve_2v2.jpg)
+![*Solenoid_Valve_2v2* ](images/Solenoid_Valve_2v2.jpg)
 Solenoid Valve 2v2
 
-![*Solenoid_Valve_3v2* ](Solenoid_Valve_3v2.jpg)
+![*Solenoid_Valve_3v2* ](images/Solenoid_Valve_3v2.jpg)
 Solenoid Valve 3v2
 
-![*Stepper_Motor_Drive* ](Stepper_Motor_Drive.jpg)
+![*Stepper_Motor_Drive* ](images/Stepper_Motor_Drive.jpg)
 Stepper Motor Drive
 
-![*Stepper_Motor_operated_butterfly_valve* ](Stepper_Motor_operated_butterfly_valve.jpg)
+![*Stepper_Motor_operated_butterfly_valve* ](images/Stepper_Motor_operated_butterfly_valve.jpg)
 Stepper Motor operated butterfly valve
 
-![*Vacuum_Pump* ](Vacuum_Pump.jpg)
+![*Vacuum_Pump* ](images/Vacuum_Pump.jpg)
 Vacuum Pump
 
 
