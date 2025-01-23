@@ -157,7 +157,7 @@ var h = 700;
 
 	paper.clear();
 	var x = 50, y = 40;
-	var time = 500;
+	var time = 5000;
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";
