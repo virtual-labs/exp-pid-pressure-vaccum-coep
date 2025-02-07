@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="css/question.css">
 <link rel="stylesheet" href="css/pageStyle.css">
 <link rel="stylesheet" href="css/pressureVaccum.css">
+<link rel="stylesheet" href="css/result.css">
 
 <style>
 
@@ -49,10 +50,11 @@
 	</div>
 	<div  class="row container-fluid" id="buttonDiv" >	
 		<div  class="col-sm-12" > 
+			<h5 id="counter" class=" btn1 timerStyle">00:00:00</h5>
 			<button type="button" id="tagDetails" class="btn btn-danger btn1" data-toggle="modal" data-target="#tag"><b>Tag details</b></button>	
 	        <button type="button" id="simDemo" class="btn btn-danger btn1" data-toggle="modal" data-target="#proStr"><b>Problem statement</b> </button>
 		   <button type="button" id="procedure" class="btn btn-danger btn1" data-toggle="modal" data-target="#procedure2"><b>Procedure</b> </button>
-		   
+
 		         </div>
 	     
 	   
@@ -157,13 +159,15 @@ Copyrights &copy; COEPTECH - Virtual Labs
 <script src="src/pressureVacuumSensorPiping.js"></script>
 <script src="src/pressureVacuumSensorInstrument.js"></script>
 <script src="src/pressureVacuumSquActivities.js"></script>
-<script src="src/pressureVacuumSensorMimic.js"></script>
+<script src="src/vacuumSensorMimic.js"></script>
+<script src="src/pressureSensorMimic.js"></script>
 <script src="src/pressureVacuumGraph.js"></script>
+<script src="src/timer.js"></script>
 
 <script>
 $( document ).ready(function() {
- 	pressureVacuumSensorPiping();
- 	//pressureVacuumSensorMimic();
+	pressureVacuumSensorPiping();
+	//pressureVacuumSensorMimic();
 	//pressureVacuumsquActivities();
 });
 </script>
