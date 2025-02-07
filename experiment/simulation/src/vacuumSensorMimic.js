@@ -19,10 +19,10 @@ function pressureVacuumSensorMimic(){
 		+'</div>'
 		+'<div class="row">'
 		+'<div class="col-sm-6">'
-		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" disabled>View Datasheet</button>'
+		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" >View Datasheet</button>'
 		+'</div>'
 		+'<div class="col-sm-6">'
-		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends </button>'
+		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" >Trends</button>'
 		+'</div>'
 		+'</div>'
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -40,27 +40,27 @@ function pressureVacuumSensorMimic(){
 		+'<tbody>'
 		+'  <tr>'
 		+' <td><label><b>CV</b></label></td>'
-		+' <td><label class="PMCValue" id="cv">0</label>lph</td>'
+		+' <td><label class="PMCValue" id="cv">0</label>%</td>'
 		+'  </tr>'
 		+' <tr>'
 		+'   <td><label><b>S1 </b></label></td>'
-		+'   <td><label class="PMCValue" id="s1">0</label>%</td>'
+		+'   <td><label class="PMCValue" id="s1">0</label>mBar</td>'
 		+'  </tr>'
 		+'  <tr>'
 		+' <td><label><b>S2</b></label></td>'
-		+' <td><label class="PMCValue" id="s2">0</label>%</td>'
+		+' <td><label class="PMCValue" id="s2">0</label>mBar</td>'
 		+'  </tr>'
 		+'  <tr>'
 		+' <td><label><b>S3 </b></label></td>'
-		+' <td><label class="PMCValue" id="s3">0</label>lph</td>'
+		+' <td><label class="PMCValue" id="s3">0</label>mBar</td>'
 		+'  </tr>'
 		+'  <tr>'
 		+' <td><label><b>S4</b></label></td>'
-		+' <td><label class="PMCValue" id="s4">0</label>lph</td>'
+		+' <td><label class="PMCValue" id="s4">0</label>mBar</td>'
 		+'  </tr>'
 		+'  <tr>'
 		+' <td><label><b>S5</b></label></td>'
-		+' <td><label class="PMCValue" id="s5">0</label>lph</td>'
+		+' <td><label class="PMCValue" id="s5">0</label>mBar</td>'
 		+'  </tr>'
 		
 	
@@ -70,7 +70,7 @@ function pressureVacuumSensorMimic(){
 		+'</div>'
 		
 		+'<div class="col-sm-12">'
-		+'<button type="button" class="btn btn-danger"  id="btnResult" style="margin-top:10px;width:100%" disabled>Result</button>'
+		+'<button type="button" class="btn btn-danger"  id="btnPressureVacuumMimic" style="margin-top:10px;width:100%" >Next</button>'
 		+'</div>'
 		
 		+'<div class="modal fade " id="datasheetModel">'
@@ -125,9 +125,9 @@ function pressureVacuumSensorMimic(){
 //		+'</div>'
 	$("#Selection").html(htm);
 	animateVacuumSensor();
-	$("#BoilerHeatExchangerPost").click(function(){
+	$("#btnPressureVacuumMimic").click(function(){
 		
-		pressureVacuumPostQuestion();
+		pressureVacuumSensorMimic1();
 		
 	});
 	
@@ -157,13 +157,13 @@ var h = 700;
 
 	paper.clear();
 	var x = 50, y = 40;
-	var time = 5000;
+	var time = 2000;
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";
 	var vacuumColor = "#ddf4f6";
 	var s1=0, s2=0, s3=0, s4=0, s5=0, valveCnt = 0;
-	var flag = false;
+	var flag = false, flag1 = false;
 	
 	//	Electricity and air flow indicators
 	paper.rect((x+220),(y+80),270,215,5);
@@ -191,15 +191,17 @@ var h = 700;
 	paper.text((x + 890), (y +125), "SV").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
 	
 	
-	paper.text((x + 670), (y +45), "Sensor 1").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
-	paper.text((x + 540), (y +180), "Sensor 2").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
-	paper.text((x + 610), (y +345), "Sensor 3").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
-	paper.text((x + 1100), (y), "Sensor 4").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
-	paper.text((x + 1320), (y +90), "Sensor 5").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
+	paper.text((x + 720), (y +45), "S1").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
+	paper.text((x + 595), (y +180), "S2").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
+	paper.text((x + 655), (y +345), "S3").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
+	paper.text((x + 1180), (y+50), "S4").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
+	paper.text((x + 1390), (y +180), "S5").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
 	
 	
 	paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 24, "stroke": backColor, "stroke-linejoin": "round" });
-	var motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
+//	var motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
+	var motorPipe1 = paper.path("M" + (x + 360) + " " + (y + 520) + " l  190 0").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
+	var motorPipe2 = paper.path("M" + (x + 549) + " " + (y + 520) + " l  451 0 l 0 -170").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	var mtrOn = paper.image("images/on.png", (x + 290), (y + 375), 60, 40).hide();
 	var mtrOff = paper.image("images/off.png", (x +290), (y + 375), 60, 40);
@@ -215,7 +217,7 @@ var h = 700;
 	
 	//air vent connection path
 	paper.path("M" + (x + 825) + " " + (y+138 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var s11path = paper.path("M" + (x + 825) + " " + (y+138 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var s11path = paper.path("M" + (x + 825) + " " + (y+138 ) + " l  0 -62 l 60 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	
 	paper.path("M" + (x + 645) + " " + (y+220 ) + " l  0 30 l 245 0").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
@@ -223,7 +225,7 @@ var h = 700;
 	
 	//air vent connection path
 	paper.path("M" + (x + 705) + " " + (y+246 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var s21path = paper.path("M" + (x + 705) + " " + (y+246 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var s21path = paper.path("M" + (x + 705) + " " + (y+246 ) + " l  0 -62 l 60 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	
 	paper.path("M" + (x + 705) + " " + (y+393 ) + " l  0 20 l 155 0 l 70 -87").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
@@ -231,7 +233,7 @@ var h = 700;
 	
 	//air vent connection path
 	paper.path("M" + (x + 760) + " " + (y+409 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var s31path = paper.path("M" + (x + 760) + " " + (y+409 ) + " l  0 -62 l 100 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var s31path = paper.path("M" + (x + 760) + " " + (y+409 ) + " l  0 -62 l 60 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 //	right side sensor path from top
 	
@@ -240,17 +242,17 @@ var h = 700;
 	
 	//air vent connection path
 	paper.path("M" + (x + 1175) + " " + (y+138 ) + " l  0 -62 l -100 0 ").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var s41path = paper.path("M" + (x + 1175) + " " + (y+138 ) + " l  0 -62 l -100 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var s41path = paper.path("M" + (x + 1175) + " " + (y+138 ) + " l  0 -62 l -60 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	paper.path("M" + (x + 1355) + " " + (y+220 ) + " l  0 30 l -245 0").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
 	var s5path = paper.path("M" + (x + 1355) + " " + (y+220 ) + " l  0 30 l -245 0").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	//air vent connection path
 	paper.path("M" + (x + 1300) + " " + (y+246 ) + " l  0 -62 l -100 0 ").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var s51path = paper.path("M" + (x + 1300) + " " + (y+246 ) + " l  0 -62 l -100 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var s51path = paper.path("M" + (x + 1300) + " " + (y+246 ) + " l  0 -62 l -60 0 ").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 	
 	paper.path("M" + (x + 1073) + " " + (y+333 ) + " l 70 80 l 130 0").attr({ "stroke-width": 12, "stroke": backColor, "stroke-linejoin": "round" });
-	var openPath = paper.path("M" + (x + 1073) + " " + (y+333 ) + " l 70 80 l 130 0").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
+	var openPath = paper.path("M" + (x + 1073) + " " + (y+333 ) + " l 70 80 l 60 0").attr({ "stroke-width": 8, "stroke": "#fff", "stroke-linejoin": "round" });
 
 
 	var vacuumPump = paper.image("images/vacuum_pump.png", (x + 70), (y + 350), 340, 250);
@@ -372,16 +374,20 @@ var h = 700;
 		
 		if(initFlagCnt == true){ 
 			
-			resetAllValves();
+//			resetAllValves();
 			s1=0, s2=0, s3=0, s4=0, s5=0, valveCnt = 0;
 			flag = false;
+			flag1 = false;
 			
 			activeTimeouts.forEach((timeout) => clearTimeout(timeout));
 	    	activeTimeouts = [];
     	}
     	
+    	stOn.toFront();
     	initFlagCnt = true;
 		$("#startBtn").prop("disabled", true);
+		$("#datasheetBtn").prop("disabled", true);
+		$("#graph").prop("disabled", true);
 		
 		a = [];
 		
@@ -397,8 +403,8 @@ var h = 700;
 					mtrOff.hide();
 					mtrOn.show();
 					activeTimeouts.push(setTimeout(() => {
-						a[0] = paper.path('M' + (x + 528) + " " + (y+520) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": vacuumColor, "stroke-linejoin": "round" });
-						a[0].animate({path: 'M' + (x + 528) + " " + (y+520) + " l  -162 0 "}, time, function(){
+//						a[0] = paper.path('M' + (x + 528) + " " + (y+520) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": vacuumColor, "stroke-linejoin": "round" });
+						motorPipe1.animate({"stroke": vacuumColor}, time, function(){
 							btrOff.hide();
 							btrOn.show();
 							
@@ -408,29 +414,22 @@ var h = 700;
 							s4gMain.toFront();
 							s5gMain.toFront();
 							
-							s1path.attr({"stroke": vacuumColor});
-							s2path.attr({"stroke": vacuumColor});
-							s3path.attr({"stroke": vacuumColor});
-							s4path.attr({"stroke": vacuumColor});
-							s5path.attr({"stroke": vacuumColor});
-							s11path.attr({"stroke": vacuumColor});
-							s21path.attr({"stroke": vacuumColor});
-							s31path.attr({"stroke": vacuumColor});
-							s41path.attr({"stroke": vacuumColor});
-							s51path.attr({"stroke": vacuumColor});
-							openPath.attr({"stroke": vacuumColor});
+							s1path.animate({"stroke": vacuumColor}, time*5);
+							s2path.animate({"stroke": vacuumColor}, time*5);
+							s3path.animate({"stroke": vacuumColor}, time*5);
+							s4path.animate({"stroke": vacuumColor}, time*5);
+							s5path.animate({"stroke": vacuumColor}, time*5);
+							s11path.animate({"stroke": vacuumColor}, time*5);
+							s21path.animate({"stroke": vacuumColor}, time*5);
+							s31path.animate({"stroke": vacuumColor}, time*5);
+							s41path.animate({"stroke": vacuumColor}, time*5);
+							s51path.animate({"stroke": vacuumColor}, time*5);
+							openPath.animate({"stroke": vacuumColor}, time*5);
+							sensorCircle.animate({"fill": vacuumColor}, time*5);							
+							motorPipe1.animate({"stroke": vacuumColor}, time*5);
+							motorPipe2.animate({"stroke": vacuumColor}, time*5);
 								
 							vacuumReadings();
-							activeTimeouts.push(setTimeout(() => {
-								sensorCircle.attr({"fill": "r(0.5, 0.5)#d5f1f3-#ffffff"});
-								a[1] =paper.path('M' + (x + 1000) + " " + (y+353) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": vacuumColor, "stroke-linejoin": "round" });
-								a[1].animate({path: 'M' + (x + 1000) + " " + (y+353) + " l 0 170 "}, time, function(){	
-									a[2] =paper.path('M' + (x + 1005) + " " + (y+520) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": vacuumColor, "stroke-linejoin": "round" });
-									a[2].animate({path: 'M' + (x + 1006) + " " + (y+520) + " l -435 0 "}, time, function(){
-										
-									});
-								});
-							}, time*2));
 						});
 					}, 2000));
 				}, 1000));
@@ -443,7 +442,7 @@ var h = 700;
 		v = v + 38; 
 		ve = diff = Math.random() * (max - min) + min; 
 		randomSign = Math.random() < 0.5 ? -1 : 1;
-		perv = (38/100)*ve;
+		perv = (v/100)*ve;
 		perv = randomSign * perv;
 		return v + perv;
 	}
@@ -454,16 +453,16 @@ var h = 700;
 		var s2e = 0, s3e = 0, s4e = 0, s5e = 0;
 					
 		let s2min = 0.25;
-		let s2max = 2;
+		let s2max = 0.75;
 					
-		let s3min = 0;
-		let s3max = 1;
+		let s3min = 0.25;
+		let s3max = 1.25;
 			
-		let s4min = 0;
-		let s4max = 2;
+		let s4min = 0.5;
+		let s4max = 1.5;
 					
-		let s5min = 0;
-		let s5max = 0.5;
+		let s5min = 0.7;
+		let s5max = 2;
 		
 		for(i = 0 ; i < 20 ; i++){
 		
@@ -503,7 +502,7 @@ var h = 700;
 				activeTimeouts.push(setTimeout(() => {
 					if(flag === false){
 						flag = true;
-						closeAllMainValveAndOpenVent(); 
+						compressorOffVentOn();
 					}else{
 						return;
 					} 
@@ -512,57 +511,138 @@ var h = 700;
 		}
 	}
 	
-	var closeAllMainValveAndOpenVent = function(){ 
+	
+		var compressorOffVentOn = function(){ 
 		
 		data = {};
 		data.data = dataArr;
 		dataAr.push(data);
-		console.log(dataAr);
 		
-		rnOff.toFront();
-		shOn.toFront();
-		s1gVent .toFront();
-		s2gVent.toFront();
-		s3gVent.toFront();
-		s4gVent.toFront();
-		s5gVent.toFront();
-		mtrOn.hide();
-		mtrOff.show();
+		mtrOff.toFront();
 		btrOn.hide();
 		btrOff.show();
-		
+		btrflyReading.attr('text', "0");
 		activeTimeouts.push(setTimeout(() => {
-			s1path.attr({"stroke": color});
-			s2path.attr({"stroke": color});
-			s3path.attr({"stroke": color});
-			s4path.attr({"stroke": color});
-			s5path.attr({"stroke": color});
-			s11path.attr({"stroke": color});
-			s21path.attr({"stroke": color});
-			s31path.attr({"stroke": color});
-			s41path.attr({"stroke": color});
-			s51path.attr({"stroke": color});
-			openPath.attr({"stroke": color});
-			sensorCircle.attr({"fill": color});
+			opengVent.toFront();
+			s1path.animate({"stroke": color}, time*5);
+			s2path.animate({"stroke": color}, time*5);
+			s3path.animate({"stroke": color}, time*5);
+			s4path.animate({"stroke": color}, time*5);
+			s5path.animate({"stroke": color}, time*5);
+			s11path.animate({"stroke": color}, time*5);
+			s21path.animate({"stroke": color}, time*5);
+			s31path.animate({"stroke": color}, time*5);
+			s41path.animate({"stroke": color}, time*5);
+			s51path.animate({"stroke": color}, time*5);
+			openPath.animate({"stroke": color}, time*5);
+			sensorCircle.animate({"fill": color}, time*5);			
+			motorPipe1.animate({"stroke": vacuumColor}, time*5);
+			motorPipe2.animate({"stroke": color}, time*5);
 			
-			s1Reading.attr('text', "0");
-			s2Reading.attr('text', "0");
-			s3Reading.attr('text', "0");
-			s4Reading.attr('text', "0");
-			s5Reading.attr('text', "0");
-			btrflyReading.attr('text', "0");
+			preasureReadingsRev();
+		}, time*4));
+	}
+	
+	var evaluateRev = function(v, ve, max, min){
+		v = v - 38; 
+		ve = diff = Math.random() * (max - min) + min; 
+		randomSign = Math.random() < 0.5 ? -1 : 1;
+		perv = (v/100)*ve;
+		perv = randomSign * perv;
+		return v + perv;
+	}
+	
+	var valveSwitchFlag = false;	
+	var preasureReadingsRev = function(){
+		s1 = 760.00, s2 = 759.43, s3 = 759.91, s4 = 759.37, s5 = 759.98;
+		var s2e = 0, s3e = 0, s4e = 0, s5e = 0;
+					
+		let s2min = 0.25;
+		let s2max = 0.75;
+					
+		let s3min = 0.25;
+		let s3max = 1.25;
 			
-			a[1] =paper.path('M' + (x + 1000) + " " + (y+353) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": color, "stroke-linejoin": "round" });
-			a[1].animate({path: 'M' + (x + 1000) + " " + (y+353) + " l 0 170 "}, time/2, function(){	
-				a[2] =paper.path('M' + (x + 1005) + " " + (y+520) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": color, "stroke-linejoin": "round" });
-				a[2].animate({path: 'M' + (x + 1006) + " " + (y+520) + " l -435 0 "}, time/2, function(){
-					a[0] =paper.path('M' + (x + 528) + " " + (y+520) + " l  0 0 ").attr({ "stroke-width": 18, "stroke": color, "stroke-linejoin": "round" });
-					a[0].animate({path: 'M' + (x + 528) + " " + (y+520) + " l  -162 0 "}, time/2);
-					shOff.toFront();
-					$("#startBtn").prop("disabled", false);
-				});
-			});
-		}, time));
+		let s4min = 0.5;
+		let s4max = 1.5;
+					
+		let s5min = 0.7;
+		let s5max = 2;
+		
+		for(i = 0 ; i < 20 ; i++){
+		
+			activeTimeouts.push(setTimeout(() => {
+				round = {};
+				
+				if(valveSwitchFlag == false){
+					opengVent.toFront();
+					valveSwitchFlag = true;
+				}else{
+					openrVent.toFront();
+					valveSwitchFlag = false;
+				}
+				
+				s2 = evaluateRev(s1, s2e, s2max, s2min);	
+				s3 = evaluateRev(s1, s3e, s3max, s3min);	
+				s4 = evaluateRev(s1, s4e, s4max, s4min);	
+				s5 = evaluateRev(s1, s5e, s5max, s5min);	
+				
+				s1 = s1 - 38;
+				
+				round.s1 = s1.toFixed(2);
+				round.s2 = s2.toFixed(2);
+				round.s3 = s3.toFixed(2);
+				round.s4 = s4.toFixed(2);
+				round.s5 = s5.toFixed(2);
+				round.valveCnt = 0;
+				
+				dataArr.push(round);
+				
+				s1Reading.attr('text', s1.toFixed(2));
+				s2Reading.attr('text', s2.toFixed(2));
+				s3Reading.attr('text', s3.toFixed(2));
+				s4Reading.attr('text', s4.toFixed(2));
+				s5Reading.attr('text', s5.toFixed(2));
+				
+				$("#cv").html("0");				
+				$("#s1").html(s1.toFixed(2));
+				$("#s2").html(s2.toFixed(2));
+				$("#s3").html(s3.toFixed(2));
+				$("#s4").html(s4.toFixed(2));
+				$("#s5").html(s5.toFixed(2));
+				
+				activeTimeouts.push(setTimeout(() => {
+					if(flag1 === false){
+						flag1 = true; 
+						opengVent.toFront();
+						$("#startBtn").prop("disabled", false);
+						$("#datasheetBtn").prop("disabled", false);
+						$("#graph").prop("disabled", false);
+						
+						console.log(dataAr);
+						
+						rnOff.toFront();
+						shOn.toFront();
+						s1gVent .toFront();
+						s2gVent.toFront();
+						s3gVent.toFront();
+						s4gVent.toFront();
+						s5gVent.toFront();
+						mtrOn.hide();
+						mtrOff.show();
+						btrOn.hide();
+						btrOff.show();
+				
+						activeTimeouts.push(setTimeout(() => {
+							shOff.toFront();
+							resetAllValves();
+						}, 3000));
+					}else{
+						return;
+					} 
+				}, i*(time)));
+			}, i*(time))); 
+		}
 	}
 	
 	function resetAllToInitFrame(){
@@ -579,9 +659,8 @@ var h = 700;
 		s51path.animate({"stroke" : color},5000);
 		openPath.animate({"stroke": color},5000);
 		sensorCircle.animate({"fill":color},5000);
-		motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({"stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" }).animate({
-			"stroke": color
-		},5000);
+		motorPipe1.animate({"stroke": color},5000);
+		motorPipe2.animate({"stroke": color},5000);
 		
 		butterflyValve.toFront();
 		sensorCircle.toFront();
@@ -603,7 +682,8 @@ var h = 700;
 		s51path.attr({"stroke": "#fff"});
 		openPath.attr({"stroke": "#fff"});
 		sensorCircle.attr({"fill": "#fff"});
-		motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({"stroke-width": 20, "stroke": "#fff",  "stroke-linejoin": "round" });
+		motorPipe2.attr({"stroke": "#fff"});		
+		motorPipe1.attr({"stroke": "#fff"});
 		
 		butterflyValve.toFront();
 		sensorCircle.toFront();
@@ -615,8 +695,6 @@ var h = 700;
 		s3rVent.toFront();
 		s4rVent.toFront();
 		s5rVent.toFront();
-		
-		activeTimeouts.push(setTimeout(() => {}, 5000));
 	}
 	
 	

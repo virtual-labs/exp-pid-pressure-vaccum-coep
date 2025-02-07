@@ -97,7 +97,7 @@ $("#procedure2").click(function () {
 					+'</tr>'
 					+'<tr>'
 					+'<td>S2</td>'
-					+'<td>Strain Gauge type</td>'
+					+'<td>Strain Gauge type sensor</td>'
 					+'</tr>'
 					+'<tr>'
 					+'<td>S3</td>'

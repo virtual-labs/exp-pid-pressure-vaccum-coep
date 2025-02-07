@@ -49,10 +49,9 @@ p.accordion.active:after {
 
 /* Style the element that is used for the panel class */
 
-#simDemo,#nextLevel1,#verifyComponents,#verifyInstr,#nextLevel2,#verifyButton,#startBtn,#fillTankBtn,#datasheetBtn,#reset,#datasheet,#graph,#procedure,#btnResult,#generatePdf{
+#simDemo,#nextLevel1,#verifyComponents,#verifyInstr,#nextLevel2,#verifyButton,#startBtn,#fillTankBtn,#datasheetBtn,#reset,#datasheet,#graph,#procedure,#btnResult,#generatePdf,#btnVacuumMimic,#btnPressureVacuumMimic{
     border-color: teal;
     background-color: teal;
-
 }
 .timerStyle{
 	    background-color: #343a40;
