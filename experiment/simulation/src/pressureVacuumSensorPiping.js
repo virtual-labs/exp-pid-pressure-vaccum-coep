@@ -1,6 +1,7 @@
 ComponentMasterJson = {};
 
-
+timerMasterJson = {};
+resultJson={};
 function pressureVacuumSensorPiping()
 {
 var StdCompInstruCount=28;
@@ -28,7 +29,7 @@ var bv;
 var stepper;
 var ring7;
 var ring10;
-
+var pipingActualCount=0;
 //var wt;
 	$("#Header").html("	<center><span>PRESSURE & VACUUM - PIPING DIAGRAM</span></center>");
 	htm=''
@@ -168,7 +169,7 @@ var ring10;
 		+'     <li class="list-group-item">13.	The visualization tool to be deployed for the operators</li>'
 		+'     <li class="list-group-item">14.	Role based reporting structure and dash boards to be implemented using open source software </li>'
 		+'     <li class="list-group-item">15.	The minimum level financial sustainability of the set up is to be ensured and reported as pointers of efficiency</li>'
-		+'     <li class="list-group-item">17.	The alarms and events are to be generated for critical parameters and to be shared based on role.</li>'
+		+'     <li class="list-group-item">16.	The alarms and events are to be generated for critical parameters and to be shared based on role.</li>'
 
 
 		+'   </ul>'
@@ -185,7 +186,7 @@ var ring10;
 	   var selectedArray=[];
 	$("#verifyComponents").click(function(){
 		
-
+		pipingActualCount++;
 		 ac=parseInt($("#ac").val());
 		 sv=parseInt($("#sv").val());
 		 vpump=parseInt($("#vpump").val());
@@ -434,6 +435,8 @@ var ring10;
 		ComponentMasterJson.Component=tempMasterJsonComp;
 		ComponentMasterJson.Component.Utilities=selectedArray;
 		console.log(ComponentMasterJson);
+		resultJson.piping=pipingActualCount;
+		console.log(resultJson);
 	}
 	
 	$("#nextLevel1").click(function(){

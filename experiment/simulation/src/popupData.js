@@ -71,7 +71,7 @@ $("#procedure2").click(function () {
 	 $("#modelDialog").addClass("modal-md");
 //	$("#modalTitle").html("PROCEDURE");
 	htm=''
-		+' '
+		+' Add Procedure Here'
 	$("#procedureBody").html(htm);
 });
 			$("#tagDetails").click(function () {
@@ -110,6 +110,22 @@ $("#procedure2").click(function () {
 					+'<tr>'
 					+'<td>S5</td>'
 					+'<td>Bellow type sensor </td>'
+					+'</tr>'
+					+'<tr>'
+					+'<td>S6</td>'
+					+'<td>Wireless Piezoelectric sensor</td>'
+					+'</tr>'
+					+'<tr>'
+					+'<td>S7</td>'
+					+'<td>Wireless Strain Gauge type sensor</td>'
+					+'</tr>'
+					+'<tr>'
+					+'<td>S8</td>'
+					+'<td>Wireless Capacitive sensor</td>'
+					+'</tr>'
+					+'<tr>'
+					+'<td>S9</td>'
+					+'<td>Inductive type sensor</td>'
 					+'</tr>'
 				
 					+'</tbody>'

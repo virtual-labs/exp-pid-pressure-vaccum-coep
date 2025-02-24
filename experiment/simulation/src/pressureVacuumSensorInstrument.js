@@ -3,7 +3,7 @@ var InstrMasterJson = {};
 
 function pressureVacuumSensorInstrument()
 {
-	
+	var instrActualCount=0;
 	var StdCompInstruCount=18;
 	
 	var StdPICount=1;
@@ -33,7 +33,10 @@ function pressureVacuumSensorInstrument()
 	var VTwired;
 	var prv;
 	
-	
+	timerMasterJson.piping=$("#counter").text();
+//	console.log(timerMasterJson);
+	seconds = 0;
+	  updateCounter();
 	$("#Header").html("	<center><span >PRESSURE & VACUUM - INSTRUMENT DIAGRAM</span></center>");
 	$("#Selection").css({"overflow": "auto","height":" 837px"});
 	htm=''
@@ -119,7 +122,7 @@ function pressureVacuumSensorInstrument()
 	  var totalComp1=0;
 	   var flag=0;
 	$("#verifyInstr").click(function(){
-		
+		instrActualCount++;
 		 pi=parseInt($("#pi").val());
 		 afr=parseInt($("#afr").val());
 		 wgateway=parseInt($("#wgateway").val());
@@ -299,6 +302,8 @@ function pressureVacuumSensorInstrument()
 				
 		InstrMasterJson.Instrument=tempMasterJsonInstr;
 		console.log(InstrMasterJson);
+		resultJson.instrument=instrActualCount;
+		console.log(resultJson);
 	}
 	$("#nextLevel2").click(function(){
 		if(flag==1){
