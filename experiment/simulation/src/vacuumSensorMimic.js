@@ -1,8 +1,14 @@
-function pressureVacuumSensorMimic(){
-	
+var startCount1=0;
+var datasheetCount1=0;
+var trendsCount1=0;
 
-	$("#Header").html("	<center><span >SIMULATION</span></center>");
-	
+function vacuumSensorMimic(){
+	timerMasterJson.PressureMimic=$("#counter").text();
+//	console.log(timerMasterJson);
+	seconds = 0;
+	  updateCounter();
+
+	$("#Header").html("	<center><span >VACUUM SENSOR - SIMULATION</span></center>");
 	
 	htm=''
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -19,10 +25,10 @@ function pressureVacuumSensorMimic(){
 		+'</div>'
 		+'<div class="row">'
 		+'<div class="col-sm-6">'
-		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" >View Datasheet</button>'
+		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" disabled>View Datasheet</button>'
 		+'</div>'
 		+'<div class="col-sm-6">'
-		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" >Trends</button>'
+		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends</button>'
 		+'</div>'
 		+'</div>'
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -31,11 +37,7 @@ function pressureVacuumSensorMimic(){
 		+'<div class="row conf" >'
 		+'<table class="table table-bordered">'
 		+' <thead>'
-//		+'  <tr>'
-//		+'    <th>Firstname</th>'
-//		+'   <th>Lastname</th>'
-//		+'    <th>Email</th>'
-//		+' </tr>'
+
 		+'</thead>'
 		+'<tbody>'
 		+'  <tr>'
@@ -70,7 +72,7 @@ function pressureVacuumSensorMimic(){
 		+'</div>'
 		
 		+'<div class="col-sm-12">'
-		+'<button type="button" class="btn btn-danger"  id="btnPressureVacuumMimic" style="margin-top:10px;width:100%" >Next</button>'
+		+'<button type="button" class="btn btn-danger"  id="btnResult" style="margin-top:10px;width:100%" disabled>Result</button>'
 		+'</div>'
 		
 		+'<div class="modal fade " id="datasheetModel">'
@@ -104,35 +106,85 @@ function pressureVacuumSensorMimic(){
 		+'</div>'
 		+'</div>'
 		+'</div>'
-		
-		
-//		+'<div class="modal fade " id="modalTrends">'
-//		+'<div class="modal-dialog modal-xl" >'
-//		+'<div class="modal-content">'
-//		+'<div class="modal-header">'
-//		+'<h4 class="modal-title"><center></center></h4>'
-//		+'<button type="button" class="close" data-dismiss="modal">&times;</button>'
-//		+'</div>'
-//		+'<div class="modal-body" id="bodyTrends">'
-//		+'</div>'
-//		+'<div class="modal-footer">'
-////		+'       <button type="button" class="btn btn-danger"  id="download" style="margin-top:10px;float: right;" >Download </button>'
-//	
-////		+'<button type="button" class="btn btn-danger" data-dismiss="modal" >Ok</button>'
-//		+'</div>'
-//		+'</div>'
-//		+'</div>'
-//		+'</div>'
+	
 	$("#Selection").html(htm);
 	animateVacuumSensor();
-	$("#btnPressureVacuumMimic").click(function(){
+
+	
+	$("#graph").click(function(){
+		trendsCount1++;
+		$("#trends1").empty("");
+		var htm=''
 		
-		pressureVacuumSensorMimic1();
-		
+	for(var i=0;i<dataAr1.length;i++){
+		htm+='<div class="Container-fluid">'
+//		htm+='<h4>Test Cycle - '+(i+1)
+			var rowStr='RowDiv'+(i+1)
+		  htm+="<div class='row' id='"+rowStr+"'>"
+			
+			var GraphData='sensorGraphCold'+i;
+		    htm+="<div class='col-sm-12' id="+GraphData+">"
+			+'</div>'	
+		 
+			+'<div class="col-sm-12">'
+			+'<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;" hidden>Download test Cycle report - '+(i+1)+'</button>'
+			+'</div>'
+			+'</div>'
+			htm+='</div>'
+		$("#trends1").append(htm);
+		    vacuumSensorGraph(dataAr1[i].data,i);
+//		tempratureSensorGraphHot(dataArr[i],i);
+		 var count=parseInt(i+1);
+			$('#GraphDataButton'+count).on('click', function() {
+				console.log("Clickiuyrotigjdfoigj");
+//				$('#saveAsJpg').prop("hidden",true);
+				
+			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
+			        // Append the screenshot canvas to the body
+			        document.body.appendChild(canvas);
+			        $("canvas").css("display","none");
+			        // Optionally save the screenshot as an image
+			        var link = document.createElement('a');
+			        link.download = 'Density_report.png';
+			        link.href = canvas.toDataURL();
+			        link.click();
+			    });
+			});
+	}	
+	
+		 
+//	$(document).ready(function () {
+//        $('#GraphDataButton'+(i+1)).on('click', function () {
+//        	console.log("Clickiuyrotigjdfoigj");
+//            html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
+//                var imgData = canvas.toDataURL("image/png");
+//                $('#screenshotImg').attr('src', imgData);
+//                $('#downloadBtn').show().off('click').on('click', function() {
+//                    var a = document.createElement('a');
+//                    a.href = imgData;
+//                    a.download = 'screenshot.png';
+//                    a.click();
+//                });
+//            });
+//        });
+//    });
+		    
 	});
 	
+	$("#datasheetBtn").on("click", function(){
+		datasheetCount1++;
+		vacuumdatasheet();
+	});
+	
+	$("#btnResult").click(function(){
+		resultJson.animationStartV=startCount1;
+		resultJson.datasheetV=datasheetCount1;
+		resultJson.trendsV=trendsCount1;
+		console.log(resultJson);
+		result();
+	});
 }
-var dataAr = [];
+var dataAr1 = [];
 function animateVacuumSensor(){
 $("#diagram").empty();
 var data = {};
@@ -157,7 +209,7 @@ var h = 700;
 
 	paper.clear();
 	var x = 50, y = 40;
-	var time = 2000;
+	var time = 1000;
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";
@@ -371,7 +423,7 @@ var h = 700;
 	
 //	 click event listener for fill tank button
 	$("#startBtn").on("click", function () {
-		
+		startCount1++;
 		if(initFlagCnt == true){ 
 			
 //			resetAllValves();
@@ -387,7 +439,7 @@ var h = 700;
     	initFlagCnt = true;
 		$("#startBtn").prop("disabled", true);
 		$("#datasheetBtn").prop("disabled", true);
-		$("#graph").prop("disabled", true);
+		$("#graph,#btnResult").prop("disabled", true);
 		
 		a = [];
 		
@@ -516,7 +568,7 @@ var h = 700;
 		
 		data = {};
 		data.data = dataArr;
-		dataAr.push(data);
+		dataAr1.push(data);
 		
 		mtrOff.toFront();
 		btrOn.hide();
@@ -617,9 +669,9 @@ var h = 700;
 						opengVent.toFront();
 						$("#startBtn").prop("disabled", false);
 						$("#datasheetBtn").prop("disabled", false);
-						$("#graph").prop("disabled", false);
+						$("#graph,#btnResult").prop("disabled", false);
 						
-						console.log(dataAr);
+						console.log(dataAr1);
 						
 						rnOff.toFront();
 						shOn.toFront();
