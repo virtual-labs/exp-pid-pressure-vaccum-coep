@@ -1,8 +1,13 @@
-function pressureVacuumSensorMimic1(){
-	
+var startCount=0;
+var datasheetCount=0;
+var trendsCount=0;
 
-	$("#Header").html("	<center><span >SIMULATION</span></center>");
-	
+function pressureSensorMimic(){
+	timerMasterJson.squences=$("#counter").text();
+//	console.log(timerMasterJson);
+	seconds = 0;
+
+	$("#Header").html("	<center><span >PRESSURE SENSOR - SIMULATION</span></center>");
 	
 	htm=''
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -11,7 +16,7 @@ function pressureVacuumSensorMimic1(){
 	
 		+'<div class="row">'
 		+'<div class="col-sm-6">'
-		+'<button id="startBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" disabled>Start</button>'
+		+'<button id="startBtn1" class="btn btn-danger" style="width:100%;margin-bottom:10px" disabled>Start</button>'
 		+'</div>'
 		+'<div class="col-sm-6">'
 //		+'<button id="resetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" >Reset</button>'
@@ -19,10 +24,10 @@ function pressureVacuumSensorMimic1(){
 		+'</div>'
 		+'<div class="row">'
 		+'<div class="col-sm-6">'
-		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" disabled>View Datasheet</button>'
+		+'<button id="datasheetBtn1" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" disabled>View Datasheet</button>'
 		+'</div>'
 		+'<div class="col-sm-6">'
-		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends </button>'
+		+'<button type="button" class="btn btn-danger"  id="graph1" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends </button>'
 		+'</div>'
 		+'</div>'
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -82,7 +87,7 @@ function pressureVacuumSensorMimic1(){
 		+'</div>'
 		
 		+'<div class="col-sm-12">'
-		+'<button type="button" class="btn btn-danger"  id="btnResult" style="margin-top:10px;width:100%" disabled>Result</button>'
+		+'<button type="button" class="btn btn-danger"  id="btnVacuumMimic" style="margin-bottom:10px;width:100%" disabled>Next</button>'
 		+'</div>'
 		
 		+'<div class="modal fade " id="datasheetModel">'
@@ -117,29 +122,82 @@ function pressureVacuumSensorMimic1(){
 		+'</div>'
 		+'</div>'
 		
-		
-//		+'<div class="modal fade " id="modalTrends">'
-//		+'<div class="modal-dialog modal-xl" >'
-//		+'<div class="modal-content">'
-//		+'<div class="modal-header">'
-//		+'<h4 class="modal-title"><center></center></h4>'
-//		+'<button type="button" class="close" data-dismiss="modal">&times;</button>'
-//		+'</div>'
-//		+'<div class="modal-body" id="bodyTrends">'
-//		+'</div>'
-//		+'<div class="modal-footer">'
-////		+'       <button type="button" class="btn btn-danger"  id="download" style="margin-top:10px;float: right;" >Download </button>'
-//	
-////		+'<button type="button" class="btn btn-danger" data-dismiss="modal" >Ok</button>'
-//		+'</div>'
-//		+'</div>'
-//		+'</div>'
 //		+'</div>'
 	$("#Selection").html(htm);
 	animatePressureSensor();
 	
-	$("#BoilerHeatExchangerPost").click(function(){
-		pressureVacuumPostQuestion();
+	$("#btnVacuumMimic").click(function(){
+		
+		vacuumSensorMimic();
+		resultJson.animationStartP=startCount;
+		resultJson.datasheetP=datasheetCount;
+		resultJson.trendsP=trendsCount;
+		
+	});
+	
+	$("#graph1").click(function(){
+		trendsCount++;
+		$("#trends1").empty("");
+		var htm=''
+		
+	for(var i=0;i<dataAr.length;i++){
+		htm+='<div class="Container-fluid">'
+//		htm+='<h4>Test Cycle - '+(i+1)
+			var rowStr='RowDiv'+(i+1)
+		  htm+="<div class='row' id='"+rowStr+"'>"
+			
+			var GraphData='sensorGraphCold'+i;
+		    htm+="<div class='col-sm-12' id="+GraphData+">"
+			+'</div>'	
+		 
+			+'<div class="col-sm-12">'
+			+'<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;" hidden>Download test Cycle report - '+(i+1)+'</button>'
+			+'</div>'
+			+'</div>'
+			htm+='</div>'
+		$("#trends1").append(htm);
+		    pressureSensorGraph(dataAr[i].data,i);
+//		tempratureSensorGraphHot(dataArr[i],i);
+		 var count=parseInt(i+1);
+			$('#GraphDataButton'+count).on('click', function() {
+				console.log("Clickiuyrotigjdfoigj");
+//				$('#saveAsJpg').prop("hidden",true);
+				
+			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
+			        // Append the screenshot canvas to the body
+			        document.body.appendChild(canvas);
+			        $("canvas").css("display","none");
+			        // Optionally save the screenshot as an image
+			        var link = document.createElement('a');
+			        link.download = 'Density_report.png';
+			        link.href = canvas.toDataURL();
+			        link.click();
+			    });
+			});
+	}	
+	
+		 
+//	$(document).ready(function () {
+//        $('#GraphDataButton'+(i+1)).on('click', function () {
+//        	console.log("Clickiuyrotigjdfoigj");
+//            html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
+//                var imgData = canvas.toDataURL("image/png");
+//                $('#screenshotImg').attr('src', imgData);
+//                $('#downloadBtn').show().off('click').on('click', function() {
+//                    var a = document.createElement('a');
+//                    a.href = imgData;
+//                    a.download = 'screenshot.png';
+//                    a.click();
+//                });
+//            });
+//        });
+//    });
+		    
+	});
+	
+	$("#datasheetBtn1").on("click", function(){
+		datasheetCount++;
+		Datasheet();
 	});
 	
 }
@@ -168,7 +226,7 @@ var h = 700;
 
 	paper.clear();
 	var x = -50, y = 40;
-	var time = 3000;
+	var time = 1000;
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";
@@ -402,12 +460,12 @@ var h = 700;
 	setTimeout(() => {
 		eleOn.toFront();
 		stOn.toFront();
-		$("#startBtn").prop("disabled", false);
+		$("#startBtn1").prop("disabled", false);
 	}, 2000);
 	
 //	 click event listener for fill tank button
-	$("#startBtn").on("click", function () {
-		
+	$("#startBtn1").on("click", function () {
+		startCount++;
 		if(initFlagCnt == true){ 
 			
 //			resetAllValves();
@@ -421,9 +479,9 @@ var h = 700;
     	
     	stOn.toFront();
     	initFlagCnt = true;
-		$("#startBtn").prop("disabled", true);		
-		$("#datasheetBtn").prop("disabled", true);
-		$("#graph").prop("disabled", true);
+		$("#startBtn1").prop("disabled", true);		
+		$("#datasheetBtn1").prop("disabled", true);
+		$("#graph1,#btnVacuumMimic").prop("disabled", true);
 		
 //		a = [];
 		
@@ -726,9 +784,9 @@ var h = 700;
 						rnOff.toFront();
 						shOn.toFront();
 						opengVent.toFront();
-						$("#startBtn").prop("disabled", false);
-						$("#datasheetBtn").prop("disabled", false);
-						$("#graph").prop("disabled", false);
+						$("#startBtn1").prop("disabled", false);
+						$("#datasheetBtn1").prop("disabled", false);
+						$("#graph1,#btnVacuumMimic").prop("disabled", false);
 						console.log(dataAr);
 						
 						activeTimeouts.push(setTimeout(() => {

@@ -49,7 +49,7 @@ p.accordion.active:after {
 
 /* Style the element that is used for the panel class */
 
-#simDemo,#nextLevel1,#verifyComponents,#verifyInstr,#nextLevel2,#verifyButton,#startBtn,#fillTankBtn,#datasheetBtn,#reset,#datasheet,#graph,#procedure,#btnResult,#generatePdf,#btnVacuumMimic,#btnPressureVacuumMimic{
+#simDemo,#nextLevel1,#verifyComponents,#verifyInstr,#nextLevel2,#verifyButton,#startBtn,#startBtn1,#fillTankBtn,#datasheetBtn,#datasheetBtn1,#reset,#datasheet,#graph,#graph1,#procedure,#btnResult,#generatePdf,#btnVacuumMimic,#btnPressureVacuumMimic{
     border-color: teal;
     background-color: teal;
 }
@@ -356,4 +356,11 @@ background-color: #343a40;
     background-color: teal;
     margin-bottom:5px;
 
+}
+.timerStyle{
+	       background-color: #42494f;
+    color: #e8ac6e;
+    font-weight: 700;
+    font-family: 'digital-clock-font';
+    letter-spacing: 1px;
 }
