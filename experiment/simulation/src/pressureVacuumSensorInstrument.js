@@ -8,8 +8,8 @@ function pressureVacuumSensorInstrument()
 	
 	var StdPICount=1;
 	var StdAFRCount=1;
-	var StdPTWirelessCount=2;
-	var StdPTWiredCount=7;
+	var StdPTWirelessCount=3;
+	var StdPTWiredCount=6;
 	var StdPRVCount=1;
 	var StdVTWiredCount=4;
 	var StdVTWirelessCount=1;
@@ -177,8 +177,8 @@ function pressureVacuumSensorInstrument()
 						+'     <td><center>vaccum transmitter wireless</center></td>'
 						+'   </tr>'
 						+'    <tr>'
-						+'     <td><center>2</center></td>'
-						+'     <td><center>7</center></td>'
+						+'     <td><center>3</center></td>'
+						+'     <td><center>6</center></td>'
 						+'     <td><center>1</center></td>'
 						+'     <td><center>1</center></td>'
 						+'     <td><center>1</center></td>'
@@ -189,7 +189,17 @@ function pressureVacuumSensorInstrument()
 					    +' </tbody>'
 						+'</table>'
 						+'</div>'
-						+"<img src='images/Vacuum_P_and_Id.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+						
+						+'<div class="row">'
+							+'<div class="col-6">'
+							+'<h5 style="color:darkblue;">Pressure Instrument Diagram :</h5>'
+							+"<img src='images/pressure_P_and_Id.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+							+'</div>'
+							+'<div class="col-6">'
+							+'<h5 style="color:darkblue;">Vacuum Instrument Diagram :</h5>'
+							+"<img src='images/Vacuum_P_and_Id.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+							+'</div>'
+							+'</div>';
 						 $("#modelBody1").html(htm);
 						  $("#modelBody1").css("color","red"); 
 				  }
@@ -218,13 +228,33 @@ function pressureVacuumSensorInstrument()
 			addToMasterJson();
 		
 			flag=1;
-			htm=''
+			htm=`<div class="container mt-4">
+				    <!-- Tabs Navigation -->
+				    <ul class="nav nav-tabs" id="imageTabs">
+				        <li class="nav-item">
+				            <a class="nav-link active" data-bs-toggle="tab" href="#pressureTab">Pressure</a>
+				        </li>
+				        <li class="nav-item">
+				            <a class="nav-link" data-bs-toggle="tab" href="#vacuumTab">Vacuum</a>
+				        </li>
+				    </ul>
 				
-				+'<div class="col-sm-12" >'
-				+"<img src='images/Vacuum_P_and_Id.png' class='img-fluid' id='partB1' style=' width: 100px;height:100px;position: relative; margin: 20px;'  >"
-				+'</div>'
+				    <!-- Tabs Content -->
+				    <div class="tab-content mt-3">
+				        <div class="tab-pane fade show active" id="pressureTab">
+				            <img src="images/pressure_P_and_Id.png" class="img-fluid" id="partA1">
+				        </div>
+				        <div class="tab-pane fade" id="vacuumTab">
+				            <img src="images/Vacuum_P_and_Id.png" class="img-fluid" id="partA2">
+				        </div>
+				    </div>
+				</div>`;
 			  $("#diagram").html(htm);
-			  $("#partB1").animate(
+			   $('.nav-link').on('click', function() {
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active');
+        });
+			  $("#partA1,#partA2").animate(
 			          {
 			            width: "95%",
 			            height: "100%",
@@ -289,8 +319,8 @@ function pressureVacuumSensorInstrument()
 	{
 		tempMasterJsonInstr = {
 				"totalComp":"18",
-				"pressureTransmitterWireless":"2",
-				"pressureTrasmitterWired":"7",
+				"pressureTransmitterWireless":"3",
+				"pressureTrasmitterWired":"6",
 				"AFR":"1",
 				"ARP":"1",
 				"Vaccum_transmitter_wired":"4",
