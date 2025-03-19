@@ -4,10 +4,10 @@ timerMasterJson = {};
 resultJson={};
 function pressureVacuumSensorPiping()
 {
-var StdCompInstruCount=28;
+var StdCompInstruCount=27;
 
 var StdACCount=1;
-var StdSVCount=22;
+var StdSVCount=21;
 var StdVPumpCount=1;
 var StdBVCount=1;
 var StdStepperCount=1;
@@ -36,9 +36,9 @@ var pipingActualCount=0;
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
 		+'<center><span >CONFIGURATION</span></center>'
 		+'</div>'
-	
+	    
      	+'<div class="row conf" >'
-	
+	     
 		+'<div class="col-sm-12">'
 		+'<label><b>Select no of air compressor</b></label>'
 		+' <input class="form-select" id="ac" type="number" min="0" max="5" value="0" tabindex="1" ></input>'
@@ -49,8 +49,6 @@ var pipingActualCount=0;
 		+' <input class="form-select" id="sv" type="number" min="0" max="22" value="0" tabindex="2" ></input>'
 		+'</div>'
 		
-	
-		
 		+'<div class="col-sm-12">'
 		+'<label><b>Select no of vaccum pump</b></label>'
 		+' <input class="form-select" id="vpump"  type="number" min="0" max="5" value="0" tabindex="3" ></input>'
@@ -60,11 +58,11 @@ var pipingActualCount=0;
 		+' <input class="form-select" id="bv"  type="number" min="0" max="5" value="0" tabindex="4" ></input>'
 		+'</div>'
 		+'<div class="col-sm-12">'
-		+'<label><b>Select no of Stepper motor</b></label>'
+		+'<label><b>Select no of Control valve</b></label>'
 		+' <input class="form-select" id="stepper"  type="number" min="0" max="5" value="0" tabindex="5" ></input>'
 		+'</div>'
 		+'<div class="col-sm-12">'
-		+'<label><b>Select no of ring header with 7 input</b></label>'
+		+'<label><b>Select no of ring header with 6 input</b></label>'
 		+' <input class="form-select" id="ring7"  type="number" min="0" max="5" value="0" tabindex="6" ></input>'
 		+'</div>'
 		+'<div class="col-sm-12">'
@@ -82,7 +80,6 @@ var pipingActualCount=0;
 		+'  <option value="Heating_Ventilation_Air_Conditioning(HVAC)"> Heating Ventilation Air Conditioning(HVAC)</option>'
 		+'  <option value="CCTV_Surveillance">CCTV - Surveillance</option>'
 		+'  <option value="Access_Control"> Access Control</option>'
-		
 	
 		+'</select>'
 		+'</div>'
@@ -197,7 +194,6 @@ var pipingActualCount=0;
 		 
 		 const selectedValues = $("#Utilities").val();
 		 
-		 
 		 if (selectedValues) {
 	          selectedValues.forEach(value => {
 	            if (!selectedArray.includes(value)) {
@@ -208,10 +204,8 @@ var pipingActualCount=0;
 //	          $("#output").text("Values in Array: " + selectedArray.join(", "));
 	        }
 	
-		 
 		 CountComp();
 		 
-	
 		  if(totalComp==0 ||(ac === ""  || sv === "" || vpump=="" || bv=="" || stepper=="" || ring7=="" || ring10=="" )){
 			  $("#modelDialog").removeClass("modal-xl");
 				$("#modelDialog").addClass("modal-md");
@@ -241,22 +235,22 @@ var pipingActualCount=0;
 						+'   </tr>'
 						+'    <tr>'
 						+'     <td><center>Solenoid valve</center></td>'
-						+'     <td><center>22</center></td>'
+						+'     <td><center>21</center></td>'
 						+'   </tr>'
 						+'    <tr>'
 						+'     <td><center>Vacuum pump</center></td>'
 						+'     <td><center>1</center></td>'
 						+'   </tr>'
-						+'   <tr>'
+						+'    <tr>'
 						+'     <td><center>Butterfly valve</center></td>'
 						+'     <td><center>1</center></td>'
 						+'   </tr>'
-						+'   <tr>'
-						+'     <td><center>Stepper motor</center></td>'
+						+'    <tr>'
+						+'     <td><center>Control valve</center></td>'
 						+'     <td><center>1</center></td>'
 						+'   </tr>'
 						+'    <tr>'
-						+'     <td><center>Ring header with 7 input</center></td>'
+						+'     <td><center>Ring header with 6 input</center></td>'
 						+'     <td><center>1</center></td>'
 						+'   </tr>'
 						+'    <tr>'
@@ -289,20 +283,28 @@ var pipingActualCount=0;
 							+'    <tr>'
 							+'     <td><center>ACCESS CONTROL</center></td>'
 							+'     <td><center><i class="fa fa-check-square icon"></i></center></td>'
-							
 							+'   </tr>'
 							
 							+'    <tr>'
 							+'     <td><center>CCTV</center></td>'
 							+'     <td><center><i class="fa fa-check-square icon" ></i></center></td>'
-							
 							+'   </tr>'
 						    +' </tbody>'
 							+'</table>'
 							+'</div>'
 							+'</div>'
-
-						+"<img src='images/Vacuum_P.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+							
+							+'<div class="row">'
+							+'<div class="col-6">'
+							+'<h5 style="color:darkblue;">Pressure Piping Diagram :</h5>'
+							+"<img src='images/pressure_P.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+							+'</div>'
+							+'<div class="col-6">'
+							+'<h5 style="color:darkblue;">Vacuum Piping Diagram :</h5>'
+							+"<img src='images/Vacuum_P.png' class='img-fluid' style='border-style: double;border-color: black;'>"
+							+'</div>'
+							+'</div>';
+													
 					  
 						 $("#modelBody").html(htm);
 						  $("#modelBody").css("color","red");   
@@ -351,13 +353,35 @@ var pipingActualCount=0;
 					
 					flag=1;
 					addToMasterJson();
-					htm=''
-						+'<div class="col-sm-12" >'
-						+"<img src='images/Vacuum_P.png' class='img-fluid' id='partA1' style=' width: 100px;height:100px;position: relative; margin: 20px;'  >"
-						+'</div>'
+					htm=`
+										<div class="container mt-4">
+				    <!-- Tabs Navigation -->
+				    <ul class="nav nav-tabs" id="imageTabs">
+				        <li class="nav-item">
+				            <a class="nav-link active" data-bs-toggle="tab" href="#pressureTab">Pressure</a>
+				        </li>
+				        <li class="nav-item">
+				            <a class="nav-link" data-bs-toggle="tab" href="#vacuumTab">Vacuum</a>
+				        </li>
+				    </ul>
+				
+				    <!-- Tabs Content -->
+				    <div class="tab-content mt-3">
+				        <div class="tab-pane fade show active" id="pressureTab">
+				            <img src="images/pressure_P.png" class="img-fluid" id="partA1">
+				        </div>
+				        <div class="tab-pane fade" id="vacuumTab">
+				            <img src="images/Vacuum_P.png" class="img-fluid" id="partA2">
+				        </div>
+				    </div>
+				</div>`;
 						
 					$("#diagram").html(htm);
-					 $("#partA1").animate(
+					 $('.nav-link').on('click', function() {
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active');
+        });
+					 $("#partA1,#partA2").animate(
 					          {
 					            width: "90%",
 					            height: "60%",
@@ -366,7 +390,6 @@ var pipingActualCount=0;
 					            
 					          },
 					          1000,
-					          
 					        );
 						$("#nextLevel1").prop("hidden",false);
 				}	

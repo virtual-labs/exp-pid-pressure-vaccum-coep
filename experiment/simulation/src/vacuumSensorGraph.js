@@ -23,6 +23,28 @@ function vacuumSensorGraph(sensorData1, i) {
     console.log(S4Data); 
     console.log(S5Data); 
    
+           var downloadGraphBtn='graphBtn'+i;
+var btnadd='<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;">Download test Cycle report - '+(i+1)+'</button>'
+	$("#"+downloadGraphBtn).html(btnadd);	
+	
+	 var count=parseInt(i+1);
+			$('#GraphDataButton'+count).on('click', function() {
+				console.log("Clickiuyrotigjdfoigj");
+//				$('#saveAsJpg').prop("hidden",true);
+				
+			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
+			        // Append the screenshot canvas to the body
+			        document.body.appendChild(canvas);
+			        $("canvas").css("display","none");
+			        // Optionally save the screenshot as an image
+			        var link = document.createElement('a');
+			        link.download = 'VacuumSensor_Graph.png';
+			        link.href = canvas.toDataURL();
+			        link.click();
+			    });
+			});
+   
+   
 
     // Dynamically create the div ID for the graph
     const graphDiv = 'sensorGraphCold' + i;

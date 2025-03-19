@@ -87,7 +87,7 @@ function pressureSensorMimic(){
 		+'</div>'
 		
 		+'<div class="col-sm-12">'
-		+'<button type="button" class="btn btn-danger"  id="btnVacuumMimic" style="margin-bottom:10px;width:100%" disabled>Next</button>'
+		+'<button type="button" class="btn btn-danger"  id="btnVacuumMimic" style="margin-bottom:30px; width:100%" disabled>Next</button>'
 		+'</div>'
 		
 		+'<div class="modal fade " id="datasheetModel">'
@@ -147,33 +147,16 @@ function pressureSensorMimic(){
 		  htm+="<div class='row' id='"+rowStr+"'>"
 			
 			var GraphData='sensorGraphCold'+i;
+			var downloadGraphBtn='graphBtn'+i;
 		    htm+="<div class='col-sm-12' id="+GraphData+">"
 			+'</div>'	
-		 
-			+'<div class="col-sm-12">'
-			+'<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;" hidden>Download test Cycle report - '+(i+1)+'</button>'
-			+'</div>'
+		    +"<div class='col-sm-12' id="+downloadGraphBtn+">"
 			+'</div>'
 			htm+='</div>'
 		$("#trends1").append(htm);
 		    pressureSensorGraph(dataAr[i].data,i);
 //		tempratureSensorGraphHot(dataArr[i],i);
-		 var count=parseInt(i+1);
-			$('#GraphDataButton'+count).on('click', function() {
-				console.log("Clickiuyrotigjdfoigj");
-//				$('#saveAsJpg').prop("hidden",true);
-				
-			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
-			        // Append the screenshot canvas to the body
-			        document.body.appendChild(canvas);
-			        $("canvas").css("display","none");
-			        // Optionally save the screenshot as an image
-			        var link = document.createElement('a');
-			        link.download = 'Density_report.png';
-			        link.href = canvas.toDataURL();
-			        link.click();
-			    });
-			});
+		
 	}	
 	
 		 
@@ -227,6 +210,7 @@ var h = 700;
 	paper.clear();
 	var x = -50, y = 40;
 	var time = 1000;
+
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";

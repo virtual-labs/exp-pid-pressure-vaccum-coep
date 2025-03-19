@@ -28,7 +28,7 @@ function vacuumSensorMimic(){
 		+'<button id="datasheetBtn" class="btn btn-danger" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#datasheetModel" disabled>View Datasheet</button>'
 		+'</div>'
 		+'<div class="col-sm-6">'
-		+'<button type="button" class="btn btn-danger"  id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends</button>'
+		+'<button type="button" class="btn btn-danger" id="graph" style="width:100%;margin-bottom:10px" data-toggle="modal" data-target="#modalTrends1" disabled>Trends</button>'
 		+'</div>'
 		+'</div>'
 		+'<div class="row titlePart"  style="border-style: unset;padding:7px;">'
@@ -110,7 +110,6 @@ function vacuumSensorMimic(){
 	$("#Selection").html(htm);
 	animateVacuumSensor();
 
-	
 	$("#graph").click(function(){
 		trendsCount1++;
 		$("#trends1").empty("");
@@ -123,33 +122,16 @@ function vacuumSensorMimic(){
 		  htm+="<div class='row' id='"+rowStr+"'>"
 			
 			var GraphData='sensorGraphCold'+i;
+			var downloadGraphBtn='graphBtn'+i;
 		    htm+="<div class='col-sm-12' id="+GraphData+">"
 			+'</div>'	
-		 
-			+'<div class="col-sm-12">'
-			+'<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;" hidden>Download test Cycle report - '+(i+1)+'</button>'
-			+'</div>'
+		    +"<div class='col-sm-12' id="+downloadGraphBtn+">"
 			+'</div>'
 			htm+='</div>'
 		$("#trends1").append(htm);
 		    vacuumSensorGraph(dataAr1[i].data,i);
 //		tempratureSensorGraphHot(dataArr[i],i);
-		 var count=parseInt(i+1);
-			$('#GraphDataButton'+count).on('click', function() {
-				console.log("Clickiuyrotigjdfoigj");
-//				$('#saveAsJpg').prop("hidden",true);
-				
-			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
-			        // Append the screenshot canvas to the body
-			        document.body.appendChild(canvas);
-			        $("canvas").css("display","none");
-			        // Optionally save the screenshot as an image
-			        var link = document.createElement('a');
-			        link.download = 'Density_report.png';
-			        link.href = canvas.toDataURL();
-			        link.click();
-			    });
-			});
+		
 	}	
 	
 		 
@@ -210,6 +192,7 @@ var h = 700;
 	paper.clear();
 	var x = 50, y = 40;
 	var time = 1000;
+
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
 	var backColor = "#818080";
@@ -249,6 +232,12 @@ var h = 700;
 	paper.text((x + 1180), (y+50), "S4").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
 	paper.text((x + 1390), (y +180), "S5").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'  });
 	
+	paper.image("images/wireless.gif", (x + 1370), (y+200), 60, 40);
+	
+	paper.rect((x+1320),(y-60),100,150,5);
+	paper.image("images/wifiGateway.png", (x + 1330), (y-50), 80, 100).transform("s-1,1");;
+	paper.text((x + 1340), (y+55), "Wireless").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'});
+	paper.text((x + 1340), (y+70), "Gateway").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'});
 	
 	paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 24, "stroke": backColor, "stroke-linejoin": "round" });
 //	var motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
