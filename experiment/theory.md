@@ -81,9 +81,9 @@ Vacuum plant communication and piping & Instrument Diagram
 
 Vacuum Mimic Diagram
 
-Pressure and Vacuum plant Components
+#### Pressure and Vacuum plant Components
 
-![*Air_Compressor* ](images/Air_Compressor.png)
+![*Air_Compressor* ](images/Air_Compressor.jpg)
 
 Air Compressor
 
@@ -94,10 +94,6 @@ Smart Wireless Gateway
 ![*Solenoid_Valve_2v2* ](images/Solenoid_Valve_2v2.jpg)
 
 Solenoid Valve 2v2
-
-![*Solenoid_Valve_3v2* ](images/Solenoid_Valve_3v2.jpg)
-
-Solenoid Valve 3v2
 
 ![*Stepper_Motor_Drive* ](images/Stepper_Motor_Drive.jpg)
 
