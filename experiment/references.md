@@ -14,6 +14,7 @@
 
 -	International Conference on Instrumentation and Measurement (ICIM 2019). Calibration of Pressure and Vacuum Sensors: Challenges and Opportunities. Proceedings of the 2019 International Conference on Instrumentation and Measurement, Glasgow, UK, August 26-28, 2019.
 -	IEEE Sensors Conference (IEEE SENSORS 2018). Design and Development of a Calibration Facility for Pressure and Vacuum Sensors. Proceedings of the 2018 IEEE Sensors Conference, New Delhi, India, October 28-31, 2018.
+
 #### Standards and Guidelines:
 
 -	International Organization for Standardization (ISO). (2019). ISO 17025:2019: General Requirements for the Competence of Testing and Calibration Laboratories. Geneva: ISO.
@@ -23,7 +24,7 @@
 
 -	Omega Engineering. (n.d.). Pressure and Vacuum Sensors: Calibration and Troubleshooting. Retrieved from https://www.omega.com/pressure-vacuum-sensors-calibration-troubleshooting
 -	Instrumentation, Systems, and Automation Society (ISA). (n.d.). Calibration of Pressure and Vacuum Sensors. Retrieved from https://www.isa.org/standards-and-publications/isa-publications/calibration-of-pressure-and-vacuum-sensors/
--	
+	
 #### Thesis and Dissertations:
 
 -	Lee, S. (2020). Design and Development of a Calibration Facility for Pressure and Vacuum Sensors. Master's Thesis, Seoul National University, South Korea.
