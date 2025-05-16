@@ -162,7 +162,7 @@ function vacuumSensorMimic(){
 		resultJson.animationStartV=startCount1;
 		resultJson.datasheetV=datasheetCount1;
 		resultJson.trendsV=trendsCount1;
-		console.log(resultJson);
+	//	console.log(resultJson);
 		result();
 	});
 }
@@ -190,8 +190,8 @@ var h = 700;
 	
 
 	paper.clear();
-	var x = 50, y = 40;
-	var time = 1000;
+	var x = 50, y = 70;
+	var time = 500;
 
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
