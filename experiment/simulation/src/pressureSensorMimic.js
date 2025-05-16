@@ -208,8 +208,8 @@ var h = 700;
 	
 
 	paper.clear();
-	var x = -50, y = 40;
-	var time = 1000;
+	var x = -50, y = 50;
+	var time = 500;
 
 	var txtColor = "#00cc88"; 
 	var color = '#b4eff3';
@@ -724,6 +724,14 @@ var h = 700;
 				s8 = evaluateRev(s1, s8e, s8max, s8min);
 				s9 = evaluateRev(s1, s9e, s9max, s9min);
 				
+				if (s2 < 0) { s2 = 0 }
+				if (s3 < 0) { s3 = 0 }
+				if (s4 < 0) { s4 = 0 }
+				if (s5 < 0) { s5 = 0 }
+				if (s6 < 0) { s6 = 0 }
+				if (s7 < 0) { s7 = 0 }
+				if (s8 < 0) { s8 = 0 }
+				if (s9 < 0) { s9 = 0 }
 				s1 = s1 - 0.3;
 				
 				round.s1 = s1.toFixed(2);
