@@ -239,6 +239,8 @@ var h = 700;
 	paper.text((x + 1340), (y+55), "Wireless").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'});
 	paper.text((x + 1340), (y+70), "Gateway").attr({ 'font-size': 13, 'font-weight': 'bold','text-anchor': 'start'});
 	
+	paper.image("images/wireless.gif", (x + 1325), (y-49), 80, 50).attr({'transform': 'r' + 270});
+	
 	paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 24, "stroke": backColor, "stroke-linejoin": "round" });
 //	var motorPipe = paper.path("M" + (x + 360) + " " + (y + 520) + " l  640 0 l 0 -170").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
 	var motorPipe1 = paper.path("M" + (x + 360) + " " + (y + 520) + " l  190 0").attr({ "stroke-width": 20, "stroke": "#fff", "stroke-linejoin": "round" });
