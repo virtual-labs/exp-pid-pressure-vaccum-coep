@@ -23,7 +23,6 @@
 #### Online Resources:
 
 -	Omega Engineering. (n.d.). Pressure and Vacuum Sensors: Calibration and Troubleshooting. Retrieved from https://www.omega.com/pressure-vacuum-sensors-calibration-troubleshooting
--	Instrumentation, Systems, and Automation Society (ISA). (n.d.). Calibration of Pressure and Vacuum Sensors. Retrieved from https://www.isa.org/standards-and-publications/isa-publications/calibration-of-pressure-and-vacuum-sensors/
 	
 #### Thesis and Dissertations:
 
