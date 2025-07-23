@@ -2,7 +2,7 @@
     "version": 2,
     "questions": [
         {
-            "question": "In your opinion why all the customer requirements could not be satisfied?",
+            "question": "In your opinion why all the customer requirements associated with pressure sensor calibration lab could not be satisfied?",
             "answers": {
                 "a": "Poor Engineering of the project",
                 "b": "Lack of undestanding of the requirements",
@@ -13,7 +13,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "Is the dynamic simulation of the process matches with the fullest extent of customer requirements?",
+            "question": "Is the dynamic simulation of the vacuum sensor setup matches with the fullest extent of customer requirements?",
             "answers": {
                 "a": "Yes",
                 "b": "No"
@@ -22,21 +22,21 @@
             "difficulty": "beginner"
         },
         {
-            "question": "Which component of the plant will consume maximum energy?",
+            "question": "Which component of the vacuum calibration setup will consume maximum energy?",
             "answers": {
-                "a": "Pump",
+                "a": "Compressor",
                 "b": "Control system",
-                "c": "Field Instruments",
-                "d": "None from the list"
+                "c": "Vacuum pump",
+                "d": "Field Instruments"
             },
-            "correctAnswer": "a",
+            "correctAnswer": "c",
             "difficulty": "beginner"
         },
         {
-            "question": "Which method will be useful for reducing the energy consumption of the calibration facility?",
+            "question": "Which method will be useful for reducing the energy consumption of the pressure sensor calibration facility?",
             "answers": {
                 "a": "By reducing the number of cycles of the experiments",
-                "b": "By maximising  the number of  sensors to be calibrated simultaneously",
+                "b": "By maximising the number of sensors to be calibrated simultaneously",
                 "c": "By re-designning the entire calibration facility",
                 "d": "None listed"
             },
@@ -44,14 +44,14 @@
             "difficulty": "beginner"
         },
         {
-            "question": "Which type of sensors can't be tested in the facility?",
+            "question": "Which type of sensors can be tested in this facility?",
             "answers": {
                 "a": "Four wire system",
                 "b": "Two wire system",
                 "c": "Wireless system",
-                "d": "Not mentioned in the list"
+                "d": "All"
             },
-            "correctAnswer": "c",
+            "correctAnswer": "d",
             "difficulty": "beginner"
         }
     ]

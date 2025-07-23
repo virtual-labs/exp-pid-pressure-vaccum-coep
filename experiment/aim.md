@@ -1,6 +1,6 @@
 ## Aim 
 
-Design, built, and commission the pilot plant for testing of Pressure and Vacuum sensors as per the requirements of the customer
+Design, built, and commission the developed P & I Diagram for the pressure and vacuum sensor calibration setup as per the requirements of the customer
 
 
 ## Objectives 
