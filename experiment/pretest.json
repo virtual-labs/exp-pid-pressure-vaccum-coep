@@ -2,7 +2,7 @@
     "version": 2,
     "questions": [
         {
-            "question": " What is the definition of calibration?",
+            "question": " What is the definition of calibration as regards to testing of the pressure and vacuum sensor?",
             "answers": {
                 "a": "Calibration is the process of configuring an instrument to provide a result for a sample within an acceptable range.",
                 "b": "Calibration is configuring and verifying a measuring instrument's accuracy to ensure its readings match a known standard",
@@ -13,29 +13,18 @@
             "difficulty": "beginner"
         },
         {
-            "question": "What is traceability?",
+            "question": "What should be the standard operating region of the pressure and vacuum sensors used in any idustry ?",
             "answers": {
-                "a": "Traceability is the ability to identify and follow something or someone, or to keep track of information",
-                "b": "Traceability in calibration is the ability to link the readings of a measuring instrument to a known reference standard.",
-                "c": "Traceability means knowing and documenting the reference instrument used for calibration of device under test",
-                "d": "All"
-            },
-            "correctAnswer": "d",
-            "difficulty": "beginner"
-        },
-        {
-            "question": "What should be the standard operating region of the sensors used in any idustry ?",
-            "answers": {
-                "a": "20% to 80 %",
-                "b": "30 % to 70%",
-                "c": "0 % to 100 %",
-                "d": "10% to 90 %"
+                "a": "20% to 80%",
+                "b": "30% to 70%",
+                "c": "0% to 100%",
+                "d": "10% to 90%"
             },
             "correctAnswer": "a",
             "difficulty": "beginner"
         },
         {
-            "question": "On what basis the sensors are selected for specific application in an industry ?",
+            "question": "On what basis the pressure and vacuum sensors are selected for specific application in an industry ?",
             "answers": {
                 "a": "Range of the sensor",
                 "b": "Accuracy and Linearity in the operating region",
@@ -46,7 +35,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "In which stage of the project the design strategy is freezed?",
+            "question": "In which stage of the pressure and vacuum sensor calibration setup project the design strategy is freezed?",
             "answers": {
                 "a": "At the time of proposal",
                 "b": "At the time of Errection stage",
@@ -57,23 +46,12 @@
             "difficulty": "beginner"
         },
         {
-            "question": "As a standard practice how much settling time we should configure for storing  the readings to PLC for this set-up?",
-            "answers": {
-                "a": "Depends on plant lay-out",
-                "b": "Depends on settling time of sensor",
-                "c": "Greater than the settling time of sensor but minimum equal to settling time of process",
-                "d": "The scan time of PLC"
-            },
-            "correctAnswer": "c",
-            "difficulty": "beginner"
-        },
-        {
-            "question": "What safety feature needs to be included in this set-up  so as to avoid any accident?",
+            "question": "What safety feature needs to be included in this pressure and vacuum calibration set-up so as to avoid any accident?",
             "answers": {
                 "a": "Necessary interlocks",
                 "b": "Emergency STOP push button",
                 "c": "Redundancy at PLC level",
-                "d": "\"Fail Safe\" operation for all components"
+                "d": "Fail Safe operation for all components"
             },
             "correctAnswer": "d",
             "difficulty": "beginner"
@@ -88,7 +66,7 @@
             "difficulty": "beginner"
         },
         {
-            "question": "Will there be any change in calibration set-up as regards to application for which it will be used?",
+            "question": "Will there be any change in vacuum calibration set-up as regards to application for which it will be used?",
             "answers": {
                 "a": "Yes",
                 "b": "No"
