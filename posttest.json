@@ -1,0 +1,58 @@
+{
+    "version": 2,
+    "questions": [
+        {
+            "question": "In your opinion why all the customer requirements associated with pressure sensor calibration lab could not be satisfied?",
+            "answers": {
+                "a": "Poor Engineering of the project",
+                "b": "Lack of undestanding of the requirements",
+                "c": "Scope is unclear",
+                "d": "Available infrastructure is inadequate"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Is the dynamic simulation of the vacuum sensor setup matches with the fullest extent of customer requirements?",
+            "answers": {
+                "a": "Yes",
+                "b": "No"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which component of the vacuum calibration setup will consume maximum energy?",
+            "answers": {
+                "a": "Compressor",
+                "b": "Control system",
+                "c": "Vacuum pump",
+                "d": "Field Instruments"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which method will be useful for reducing the energy consumption of the pressure sensor calibration facility?",
+            "answers": {
+                "a": "By reducing the number of cycles of the experiments",
+                "b": "By maximising the number of sensors to be calibrated simultaneously",
+                "c": "By re-designning the entire calibration facility",
+                "d": "None listed"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which type of sensors can be tested in this facility?",
+            "answers": {
+                "a": "Four wire system",
+                "b": "Two wire system",
+                "c": "Wireless system",
+                "d": "All"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        }
+    ]
+}
