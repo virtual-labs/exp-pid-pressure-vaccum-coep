@@ -4,6 +4,17 @@ The measurement of pressure and vacuum plays an extensive and important role in 
 
 Pressure and Vacuum Plant design purpose to identify the variation in static and dynamic characteristics. We have different device communication protocols, manufacturers, accuracy and response time. It will be helpful for future research and selection of an accurate sensor for a particular application area. Here we are doing experiments with 9 pressure transmitters and 5 vacuum transmitters which has different properties.
 
+A PLC (Programmable Logic Controller) is an industrial digital computer designed to control manufacturing processes or machinery in real-time. It is rugged, reliable, and used in automation systems to replace hard-wired relay logic.
+
+Programming Languages for PLC : Ladder Logic, Function Block Diagram (FBD), Structured Text, Instruction List, and Sequential Function Chart (SFC).
+
+Input/Output (I/O) for PLC : PLCs receive inputs from sensors, switches, or devices and send outputs to actuators, motors, valves, etc.
+
+SCADA stands for Supervisory Control and Data Acquisition.
+It is a software-based system used for monitoring, controlling, and analyzing industrial processes from a centralized location.
+
+While PLCs control machines locally, SCADA provides a supervisory layer to visualize, monitor, and sometimes control multiple PLCs and remote equipment.
+
 #### Pressure & vacuum Pilot Plant Insight
 
 The Pressure vacuum Pilot Plant hardware contain the combined setup, but it is operated individually. Both plant has same PLC. Pressure setup has 0 to 10 bar three phase compressor and 9 different properties pressure transmitters (PT1 to PT9 and reference slandered is PT3). Vacuum setup has three phase 0 to -1000 mbar vacuum pump. It has 5 different properties vacuum transmitters VT1 to VT5 and reference standard is VT3.
