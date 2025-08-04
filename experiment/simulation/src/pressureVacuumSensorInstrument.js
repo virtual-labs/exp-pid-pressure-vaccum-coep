@@ -133,14 +133,14 @@ function pressureVacuumSensorInstrument()
 		 prv=parseInt($("#prv").val());
 		 
 		
-		 console.log(" pi "+pi);
-		  console.log(" afr "+afr);
-		  console.log(" wgateway "+wgateway);
-		  console.log(" VTwireless "+VTwireless);
-		  console.log(" PTwired "+PTwired);
-		  console.log(" VTwaired "+VTwaired);
-		  console.log(" PTwireless "+PTwireless);
-		  console.log(" prv "+prv);
+		 //console.log(" pi "+pi);
+		  //console.log(" afr "+afr);
+		  //console.log(" wgateway "+wgateway);
+		  //console.log(" VTwireless "+VTwireless);
+		  //console.log(" PTwired "+PTwired);
+		  //console.log(" VTwaired "+VTwaired);
+		  //console.log(" PTwireless "+PTwireless);
+		  //console.log(" prv "+prv);
 		 CountComp1();
 		 
 		  
@@ -278,17 +278,17 @@ function pressureVacuumSensorInstrument()
 			perVTWiredCount=parseFloat((VTwaired*100)/StdVTWiredCount);
 			perPRVCount=parseFloat((prv*100)/StdPRVCount);
 			
-			 console.log(" perAFRCount "+perAFRCount);
-			 console.log(" perPICount "+perPICount);
-			 console.log(" perWirelessGatewayCount "+perWirelessGatewayCount);
-			 console.log(" perPTWirelessCount "+perPTWirelessCount);
-			 console.log(" perPTWiredCount "+perPTWiredCount);
-			 console.log(" perVTWirelessCount "+perVTWirelessCount);
-			 console.log(" perVTWiredCount "+perVTWiredCount);
-			 console.log(" prv "+prv);
+			 //console.log(" perAFRCount "+perAFRCount);
+			 //console.log(" perPICount "+perPICount);
+			 //console.log(" perWirelessGatewayCount "+perWirelessGatewayCount);
+			 //console.log(" perPTWirelessCount "+perPTWirelessCount);
+			 //console.log(" perPTWiredCount "+perPTWiredCount);
+			 //console.log(" perVTWirelessCount "+perVTWirelessCount);
+			 //console.log(" perVTWiredCount "+perVTWiredCount);
+			 //console.log(" prv "+prv);
 				totalComp1=perAFRCount+perPICount+perWirelessGatewayCount+perPTWirelessCount+perPTWiredCount+perVTWirelessCount+perVTWiredCount+perPRVCount;
 			  avg=parseInt(totalComp1/8);
-			  console.log(" avg "+avg);
+			  //console.log(" avg "+avg);
 			
 				 $("#modelDialog1").removeClass("modal-xl");
 				$("#modelDialog1").addClass("modal-md");
@@ -331,9 +331,9 @@ function pressureVacuumSensorInstrument()
 				};
 				
 		InstrMasterJson.Instrument=tempMasterJsonInstr;
-		console.log(InstrMasterJson);
+		//console.log(InstrMasterJson);
 		resultJson.instrument=instrActualCount;
-		console.log(resultJson);
+		//console.log(resultJson);
 	}
 	$("#nextLevel2").click(function(){
 		if(flag==1){
