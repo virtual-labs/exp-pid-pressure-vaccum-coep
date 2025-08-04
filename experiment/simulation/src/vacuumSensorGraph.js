@@ -2,11 +2,11 @@
 function vacuumSensorGraph(sensorData1, i) {
     // Ensure we have a valid sensorData1 object
     let sensorData = JSON.parse(JSON.stringify(sensorData1));
-    console.log(sensorData); // Check the data before proceeding
+    //console.log(sensorData); // Check the data before proceeding
 
     // Ensure categories are correctly extracted
     const categories = sensorData.map(data => data.s1);
-    console.log(categories); // Check categories before using them
+    //console.log(categories); // Check categories before using them
 
     // Extracting data for each series
     const S1Data = sensorData.map(data => parseFloat(data.s1));
@@ -17,11 +17,11 @@ function vacuumSensorGraph(sensorData1, i) {
   
 
     // Check the extracted data arrays
-    console.log(S1Data); 
-    console.log(S2Data); 
-    console.log(S3Data); 
-    console.log(S4Data); 
-    console.log(S5Data); 
+    //console.log(S1Data); 
+    //console.log(S2Data); 
+    //console.log(S3Data); 
+    //console.log(S4Data); 
+    //console.log(S5Data); 
    
            var downloadGraphBtn='graphBtn'+i;
 var btnadd='<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="margin-bottom:10px;float:right;">Download test Cycle report - '+(i+1)+'</button>'
@@ -29,7 +29,7 @@ var btnadd='<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="
 	
 	 var count=parseInt(i+1);
 			$('#GraphDataButton'+count).on('click', function() {
-				console.log("Clickiuyrotigjdfoigj");
+				//console.log("Clickiuyrotigjdfoigj");
 //				$('#saveAsJpg').prop("hidden",true);
 				
 			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {

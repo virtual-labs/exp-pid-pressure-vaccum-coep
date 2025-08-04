@@ -3,7 +3,7 @@ function result(){
 	const now = new Date();
     const formatted = now.toLocaleString();
 	timerMasterJson.vacuummimic=$("#counter").text();
-	console.log(timerMasterJson);
+	//console.log(timerMasterJson);
 	
 	$("#simDemo,#procedure,#counter,#tagDetails").prop("hidden",true);
 	$("#report").prop("hidden",false);
@@ -254,15 +254,15 @@ function result(){
 	var simuAddP=parseInt(resultJson.animationStartP+resultJson.datasheetP+resultJson.trendsP);
 	var simulationP=parseFloat((simuAddP/9)*100);
 	
-	console.log(" piping "+piping);
-	console.log(" instr "+instr);
-	console.log(" squ "+squ);
-	console.log(" simuAdd "+simuAddP);
+	//console.log(" piping "+piping);
+	//console.log(" instr "+instr);
+	//console.log(" squ "+squ);
+	//console.log(" simuAdd "+simuAddP);
 	
-	console.log(" startPerP "+startPerP);
-	console.log(" datasheetPerP "+datasheetPerP);
-	console.log(" trendsPerP "+trendsPerP);
-	console.log(" simulationP "+simulationP);
+	//console.log(" startPerP "+startPerP);
+	//console.log(" datasheetPerP "+datasheetPerP);
+	//console.log(" trendsPerP "+trendsPerP);
+	//console.log(" simulationP "+simulationP);
 	
 	//Vacuum Sensor
 	
@@ -273,11 +273,11 @@ function result(){
 	var simuAddV=parseInt(resultJson.animationStartV+resultJson.datasheetV+resultJson.trendsV);
 	var simulationV=parseFloat((simuAddV/9)*100);
 
-	console.log(" simuAddV "+simuAddV);
-	console.log(" startPerV "+startPerV);
-	console.log(" datasheetPerV "+datasheetPerV);
-	console.log(" trendsPerV "+trendsPerV);
-	console.log(" simulationV "+simulationV);
+	//console.log(" simuAddV "+simuAddV);
+	//console.log(" startPerV "+startPerV);
+	//console.log(" datasheetPerV "+datasheetPerV);
+	//console.log(" trendsPerV "+trendsPerV);
+	//console.log(" simulationV "+simulationV);
 	
 	if(piping>=60){
 		 var str=''

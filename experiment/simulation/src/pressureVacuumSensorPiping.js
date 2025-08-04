@@ -405,19 +405,19 @@ var pipingActualCount=0;
 			 preRingHeater7Count=parseFloat((ring7*100)/StdRingHeater7Count);
 			 preRingHeater10Count=parseFloat((stepper*100)/StdRingHeater10Count);
 			 
-			  console.log(" perACCount "+perACCount);
-			  console.log(" perSVCount "+perSVCount);
-			  console.log(" perVPumpCount "+perVPumpCount);
-			  console.log(" perBVCount "+perBVCount);
-			  console.log(" perStepperCount "+perStepperCount);
-			   console.log(" preRingHeater7Count "+preRingHeater7Count);
-			  console.log(" preRingHeater10Count "+preRingHeater10Count);
+			  //console.log(" perACCount "+perACCount);
+			  //console.log(" perSVCount "+perSVCount);
+			  //console.log(" perVPumpCount "+perVPumpCount);
+			  //console.log(" perBVCount "+perBVCount);
+			  //console.log(" perStepperCount "+perStepperCount);
+			   //console.log(" preRingHeater7Count "+preRingHeater7Count);
+			  //console.log(" preRingHeater10Count "+preRingHeater10Count);
 			  
 				totalComp=perACCount+perSVCount+perVPumpCount+perBVCount+perStepperCount+preRingHeater7Count+preRingHeater10Count;
 			  avg=parseInt(totalComp/7);
 			  
-			  console.log(" avg "+avg);
-			  console.log(" totalComp "+totalComp);
+			  //console.log(" avg "+avg);
+			  //console.log(" totalComp "+totalComp);
 				 $("#modelDialog").removeClass("modal-xl");
 				$("#modelDialog").addClass("modal-md");
 				if((ac>StdACCount) || (sv>StdSVCount) || (vpump>StdVPumpCount) || (bv>StdBVCount) || (stepper>StdStepperCount) ||(ring7>StdRingHeater7Count) ||(ring10>StdRingHeater10Count)){
@@ -457,9 +457,9 @@ var pipingActualCount=0;
 		
 		ComponentMasterJson.Component=tempMasterJsonComp;
 		ComponentMasterJson.Component.Utilities=selectedArray;
-		console.log(ComponentMasterJson);
+		//console.log(ComponentMasterJson);
 		resultJson.piping=pipingActualCount;
-		console.log(resultJson);
+		//console.log(resultJson);
 	}
 	
 	$("#nextLevel1").click(function(){

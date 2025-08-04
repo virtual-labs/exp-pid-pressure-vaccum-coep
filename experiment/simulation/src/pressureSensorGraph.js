@@ -2,11 +2,11 @@
 function pressureSensorGraph(sensorData1, i) {
     // Ensure we have a valid sensorData1 object
     let sensorData = JSON.parse(JSON.stringify(sensorData1));
-    console.log(sensorData); // Check the data before proceeding
+    //console.log(sensorData); // Check the data before proceeding
 
     // Ensure categories are correctly extracted
     const categories = sensorData.map(data => data.s1);
-    console.log(categories); // Check categories before using them
+    //console.log(categories); // Check categories before using them
 
     // Extracting data for each series
     const S1Data = sensorData.map(data => parseFloat(data.s1));
@@ -20,15 +20,15 @@ function pressureSensorGraph(sensorData1, i) {
     const S9Data = sensorData.map(data => parseFloat(data.s9));
 
     // Check the extracted data arrays
-    console.log(S1Data); 
-    console.log(S2Data); 
-    console.log(S3Data); 
-    console.log(S4Data); 
-    console.log(S5Data); 
-    console.log(S6Data); 
-    console.log(S7Data); 
-    console.log(S8Data); 
-    console.log(S9Data); 
+    //console.log(S1Data); 
+    //console.log(S2Data); 
+    //console.log(S3Data); 
+    //console.log(S4Data); 
+    //console.log(S5Data); 
+    //console.log(S6Data); 
+    //console.log(S7Data); 
+    //console.log(S8Data); 
+    //console.log(S9Data); 
     
     
         var downloadGraphBtn='graphBtn'+i;
@@ -37,7 +37,7 @@ var btnadd='<button id="GraphDataButton'+(i+1)+'" class="btn btn-danger" style="
 	
      var count=parseInt(i+1);
 			$('#GraphDataButton'+count).on('click', function() {
-				console.log("Clickiuyrotigjdfoigj");
+				//console.log("Clickiuyrotigjdfoigj");
 //				$('#saveAsJpg').prop("hidden",true);
 				
 			    html2canvas(document.querySelector('#RowDiv'+count)).then(canvas => {
