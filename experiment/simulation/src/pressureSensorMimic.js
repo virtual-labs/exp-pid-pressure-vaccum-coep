@@ -779,7 +779,7 @@ var h = 700;
 						$("#startBtn1").prop("disabled", false);
 						$("#datasheetBtn1").prop("disabled", false);
 						$("#graph1,#btnVacuumMimic").prop("disabled", false);
-						console.log(dataAr);
+						//console.log(dataAr);
 						
 						activeTimeouts.push(setTimeout(() => {
 							shOff.toFront();

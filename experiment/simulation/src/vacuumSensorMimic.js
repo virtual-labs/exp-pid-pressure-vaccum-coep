@@ -662,7 +662,7 @@ var h = 700;
 						$("#datasheetBtn").prop("disabled", false);
 						$("#graph,#btnResult").prop("disabled", false);
 						
-						console.log(dataAr1);
+						//console.log(dataAr1);
 						
 						rnOff.toFront();
 						shOn.toFront();

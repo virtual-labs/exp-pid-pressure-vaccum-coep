@@ -4,7 +4,7 @@ function pressureVacuumsquActivities()
 
 	
 	  timerMasterJson.instr=$("#counter").text();
-		console.log(timerMasterJson);
+		//console.log(timerMasterJson);
 		seconds = 0;
 		  updateCounter();
 	var htm=''
@@ -205,7 +205,7 @@ function pressureVacuumsquActivities()
 	        	pressureSensorMimic();
 	            $('.input-box').prop('disabled', true);
 	            resultJson.seqActivites=seqCount;
-	            console.log(resultJson);
+	            //console.log(resultJson);
 	        }
 
 	        showModal(`
